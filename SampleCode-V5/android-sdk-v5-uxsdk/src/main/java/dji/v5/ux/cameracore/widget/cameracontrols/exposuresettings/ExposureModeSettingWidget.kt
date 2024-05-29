@@ -124,6 +124,7 @@ open class ExposureModeSettingWidget @JvmOverloads constructor(
             CameraExposureMode.SHUTTER_PRIORITY -> layout_camera_mode_s.isSelected = true
             CameraExposureMode.APERTURE_PRIORITY -> layout_camera_mode_a.isSelected = true
             CameraExposureMode.MANUAL -> layout_camera_mode_m.isSelected = true
+            else -> {}
         }
     }
 

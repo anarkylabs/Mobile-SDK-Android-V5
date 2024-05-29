@@ -372,7 +372,7 @@ class LiveStreamFragment:DJIFragment(), View.OnClickListener,SurfaceHolder.Callb
             )
         }
 
-        configDialog = this@LiveStreamFragment.requireContext()?.let {
+        configDialog = this@LiveStreamFragment.requireContext().let {
             AlertDialog.Builder(it, R.style.Base_ThemeOverlay_AppCompat_Dialog_Alert)
                 .setIcon(android.R.drawable.ic_menu_camera)
                 .setTitle(R.string.ad_set_live_stream_gb28181_config)
@@ -438,7 +438,7 @@ class LiveStreamFragment:DJIFragment(), View.OnClickListener,SurfaceHolder.Callb
             etAgoraUid.setText(configs[2].toCharArray(), 0, configs[2].length)
         }
 
-        configDialog = this@LiveStreamFragment.requireContext()?.let {
+        configDialog = this@LiveStreamFragment.requireContext().let {
             AlertDialog.Builder(it, R.style.Base_ThemeOverlay_AppCompat_Dialog_Alert)
                 .setIcon(android.R.drawable.ic_menu_camera)
                 .setTitle(R.string.ad_set_live_stream_agora_config)
@@ -472,7 +472,7 @@ class LiveStreamFragment:DJIFragment(), View.OnClickListener,SurfaceHolder.Callb
 
     private fun showSetLiveStreamBitrateDialog(){
         val editText = EditText(this@LiveStreamFragment.requireContext())
-        dialog = this@LiveStreamFragment.requireContext()?.let {
+        dialog = this@LiveStreamFragment.requireContext().let {
             AlertDialog.Builder(it, R.style.Base_ThemeOverlay_AppCompat_Dialog_Alert)
                 .setIcon(android.R.drawable.ic_menu_camera)
                 .setTitle(R.string.ad_set_live_stream_bit_rate)
@@ -721,6 +721,7 @@ class LiveStreamFragment:DJIFragment(), View.OnClickListener,SurfaceHolder.Callb
                 LiveStreamType.AGORA -> {
                     showSetLiveStreamAgoraConfigDialog()
                 }
+                else -> {}
             }
         }
     }
